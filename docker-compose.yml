@@ -1,0 +1,11 @@
+version: '3'
+services:
+  metabase-docker:
+    container_name: metabase
+    image: metabase/metabase
+    volumes:
+      - './metabase-data:/metabase-data'
+    environment:
+      - 'MB_DB_FILE=/metabase-data/metabase.db'
+    ports:
+      - 4000:3000
