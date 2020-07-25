@@ -2,10 +2,12 @@ version: '3'
 services:
   metabase-docker:
     container_name: metabase
-    image: metabase/metabase
+    image: metabase/metabase:v0.35.4
     volumes:
       - './metabase-data:/metabase-data'
     environment:
       - 'MB_DB_FILE=/metabase-data/metabase.db'
+      - 'MB_SITE_NAME=LAUNDRYGO'
+      - 'MB_SITE_LOCALE=en'
     ports:
-      - 4000:3000
+      - 3000:3000
